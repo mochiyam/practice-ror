@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @dev_camp_blog.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @dev_camp_blog.body %>
+</p>
+
+<%= link_to 'Edit', edit_dev_camp_blog_path(@dev_camp_blog) %> |
+<%= link_to 'Back', dev_camp_blogs_path %>

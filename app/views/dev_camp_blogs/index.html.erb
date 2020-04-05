@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dev Camp Blogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dev_camp_blogs.each do |dev_camp_blog| %>
+      <tr>
+        <td><%= dev_camp_blog.title %></td>
+        <td><%= dev_camp_blog.body %></td>
+        <td><%= link_to 'Show', dev_camp_blog %></td>
+        <td><%= link_to 'Edit', edit_dev_camp_blog_path(dev_camp_blog) %></td>
+        <td><%= link_to 'Destroy', dev_camp_blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dev Camp Blog', new_dev_camp_blog_path %>

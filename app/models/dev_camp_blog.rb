@@ -1,0 +1,2 @@
+class DevCampBlog < ApplicationRecord
+end
