@@ -64,7 +64,7 @@ class DevCampBlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dev_camp_blog
-      @dev_camp_blog = DevCampBlog.find(params[:id])
+      @dev_camp_blog = DevCampBlog.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
