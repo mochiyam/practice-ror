@@ -1,5 +1,5 @@
 class DevCampBlogsController < ApplicationController
-  before_action :set_dev_camp_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_dev_camp_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /dev_camp_blogs
   # GET /dev_camp_blogs.json
@@ -61,10 +61,19 @@ class DevCampBlogsController < ApplicationController
     end
   end
 
+def toggle_status
+  if @dev_camp_blog.draft?
+    @dev_camp_blog.published! 
+  elsif @dev_camp_blog.published?
+    @dev_camp_blog.draft!
+  end
+    redirect_to dev_camp_blogs_url, notice: 'Post status has been updated'
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dev_camp_blog
-      @dev_camp_blog = DevCampBlog.find(params[:id])
+      @dev_camp_blog = DevCampBlog.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
