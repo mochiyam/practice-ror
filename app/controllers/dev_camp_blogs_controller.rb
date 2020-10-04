@@ -78,6 +78,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def dev_camp_blog_params
-      params.require(:dev_camp_blog).permit(:title, :body)
+      params.require(:dev_camp_blog)
     end
 end
