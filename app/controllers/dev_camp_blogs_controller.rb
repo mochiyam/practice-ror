@@ -1,5 +1,6 @@
 class DevCampBlogsController < ApplicationController
   before_action :set_dev_camp_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  layout "dev_camp_blogs"
 
   # GET /dev_camp_blogs
   # GET /dev_camp_blogs.json
